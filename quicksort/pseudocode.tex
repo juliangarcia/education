@@ -1,0 +1,47 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{clrscode3e}
+
+====== 
+
+HOARE
+
+
+\begin{codebox}
+\Procname{$\proc{Quicksort}(A,p,r)$}
+\li \If $p < r$
+\li \Then  $q = \proc{Partition}(A, p, r)$
+\li  $\proc{Quicksort}(A,p,q-1)$
+\li  $\proc{Quicksort}(A,q+1,r)$
+    \End
+\end{codebox}
+
+
+
+\begin{codebox}
+\Procname{$\proc{Partition}(A,p,r)$}
+\li $x = A[p]$
+\li $i = p - 1$
+\li $j = r + 1$
+
+\li \While TRUE
+\li  \Do
+
+\Repeat 
+\li $j= j - 1$
+\li \Until $A[j] \leq x$
+
+\li \Repeat 
+\li $i= i + 1$
+\li \Until $A[j] \geq x$
+
+\li \If $i < j$
+\li \Then exchange $A[i]$ with $A[j]$
+\li \Else \Return j
+\End
+
+\End
+\end{codebox}
